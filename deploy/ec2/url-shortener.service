@@ -1,0 +1,24 @@
+[Unit]
+Description=URL Shortener Go service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=urlshortener
+Group=urlshortener
+WorkingDirectory=/var/lib/url-shortener
+EnvironmentFile=/etc/url-shortener.env
+ExecStart=/usr/local/bin/url-shortener
+Restart=always
+RestartSec=5
+TimeoutStopSec=15
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/url-shortener
+
+[Install]
+WantedBy=multi-user.target
