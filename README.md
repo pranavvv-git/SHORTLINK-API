@@ -1,4 +1,4 @@
-# URL Shortener Service
+# Shortlink-api
 
 A production-minded URL shortener written in Go. It supports generated short
 codes, custom aliases, optional expiration, redirect visit counts, health
